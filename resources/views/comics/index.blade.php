@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <a href="{{ route('comics.create') }}" class="btn btn-success">Add Comic</a>
     <div class="container my-5">
         <h1 class="mb-4">Comics List</h1>
         <div class="row">
@@ -20,5 +21,6 @@
                 </div>
             @endforeach
         </div>
+        {{ $comics->links('pagination::bootstrap-5') }}
     </div>
 @endsection
