@@ -1,1 +1,114 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'variables';
+
+
+.oswald {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+/* Header */
+header {
+    border-top: 25px solid $color-primary;
+    height: 115px;
+    background-color: $color-light;
+
+    .navbar-brand {
+        margin-right: 2rem;
+    }
+
+    a {
+        padding-bottom: 28px;
+        color: $color-secondary;
+    }
+
+    .search {
+        border-bottom: 2px solid $color-primary;
+        color: $color-secondary;
+        padding-bottom: 5px;
+    }
+
+    input {
+        border: none;
+        text-align: right;
+    }
+}
+
+.jumbotron {
+    height: 400px;
+    width: 100%;
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+}
+
+
+/* Footer */
+footer {
+    color: white;
+
+    .buy-section {
+        background-color: $color-primary;
+        height: 155px;
+
+        .buy-img {
+            width: 60px;
+            height: 60px;
+        }
+
+        h6 {
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+    }
+
+    .link-section {
+        background-image: url(../img/footer-bg.jpg);
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            color: $color-gray;
+        }
+
+        .footer-bg {
+            background-image: url(../img/dc-logo-bg.png);
+            background-size: contain;
+            height: 100%;
+            width: 50%;
+        }
+    }
+
+    .bottom-section {
+        background-color: $color-secondary;
+        height: 110px;
+
+        button {
+            border-radius: 0;
+            border: 2px solid $color-primary;
+            background-color: transparent;
+            color: $color-light;
+            padding: 10px 15px;
+        }
+
+        h4 {
+            color: $color-primary;
+        }
+
+        .social-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50px;
+        }
+    }
+}
+
+.nav-active {
+    border-bottom: 5px solid $color-primary;
+}
+
+a {
+    text-decoration: none;
+}

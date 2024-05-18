@@ -21,6 +21,7 @@
                         <li class="list-group-item"><strong>Type:</strong> {{ $comic->type }}</li>
                     </ul>
                 </div>
+                <a href="{{ route('comics.index') }}" class="btn btn-primary">Back to Comics List</a>
             </div>
         </div>
     </div>
