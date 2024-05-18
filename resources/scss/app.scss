@@ -42,6 +42,15 @@ header {
     background-size: cover;
 }
 
+.content-title {
+    background-color: $color-primary;
+    color: $color-light;
+    font-size: 28px;
+    padding: 15px 30px;
+    width: fit-content;
+    margin-top: -88px;
+    margin-bottom: 30px;
+}
 
 /* Footer */
 footer {

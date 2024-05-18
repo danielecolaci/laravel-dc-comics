@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="container my-5">
-        <h1 class="mb-4">Comics List</h1>
+        <div class="content-title oswald">
+            <h2>Comics</h2>
+        </div>
         <div class="row">
             @foreach ($comics as $comic)
                 <div class="col-md-4 mb-4">

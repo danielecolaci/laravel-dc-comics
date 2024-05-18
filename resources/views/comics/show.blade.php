@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <a href="{{ route('comics.index') }}" class="btn btn-primary">Back to Comics List</a>
     <div class="container my-5">
-        <h1>{{ $comic->title }}</h1>
+        <div class="content-title oswald">
+            <h2>{{ $comic->title }}</h2>
+        </div>
         <div class="row">
             <div class="col-md-4">
                 <img src="{{ $comic->thumb }}" class="img-fluid" alt="{{ $comic->title }}">
@@ -21,7 +22,7 @@
                         <li class="list-group-item"><strong>Type:</strong> {{ $comic->type }}</li>
                     </ul>
                 </div>
-                <a href="{{ route('comics.index') }}" class="btn btn-primary">Back to Comics List</a>
+                <a href="{{ route('comics.index') }}" class="btn btn-primary mt-5">Back to Comics List</a>
             </div>
         </div>
     </div>

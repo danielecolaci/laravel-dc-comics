@@ -12,7 +12,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="{{ Route::currentRouteName() === 'comics.create' ? 'nav-active' : '' }}"
-                        href="{{ route('comics.create') }}" aria-current="page">Add Comics</a>
+                        href="{{ route('comics.create') }}" aria-current="page">Add Comic</a>
                 </li>
             </ul>
         </div>
