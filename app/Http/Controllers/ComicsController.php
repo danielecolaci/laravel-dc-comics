@@ -32,7 +32,7 @@ class ComicsController extends Controller
         //dd($request->all());
         $data = $request->all();
 
-        $newComic = new Comics();
+       /*  $newComic = new Comics();
         $newComic->title = $data['title'];
         $newComic->description = $data['description'];
         $newComic->thumb = $data['thumb'];
@@ -40,7 +40,9 @@ class ComicsController extends Controller
         $newComic->series = $data['series'];
         $newComic->sale_date = $data['sale_date'];
         $newComic->type = $data['type'];
-        $newComic->save();
+        $newComic->save(); */
+
+        $comic = Comic::create($request->all());
 
         return redirect()->route('comics.index');
     }
@@ -56,17 +58,20 @@ class ComicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comics $comics)
+    public function edit(Comics $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comics $comics)
+    public function update(Request $request, Comics $comic)
     {
-        //
+        //dd($request->all());
+        $comic->update($request->all());
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -74,6 +79,8 @@ class ComicsController extends Controller
      */
     public function destroy(Comics $comics)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
