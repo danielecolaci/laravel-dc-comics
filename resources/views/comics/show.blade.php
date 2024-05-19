@@ -20,7 +20,16 @@
                         <li class="list-group-item"><strong>Series:</strong> {{ $comic->series }}</li>
                         <li class="list-group-item"><strong>Sale Date:</strong> {{ $comic->sale_date }}</li>
                         <li class="list-group-item"><strong>Type:</strong> {{ $comic->type }}</li>
-                        <li><a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning m-4">Edit Comic</a></li>
+                        <li class="list-group-item d-flex justify-content-evenly"><a
+                                href="{{ route('comics.edit', $comic) }}" class="btn btn-warning m-4 px-5">Edit Comic</a>
+
+                            <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger m-4 px-5"
+                                    onclick="return confirm('Are you sure you want to delete this comic?')">Delete</button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
                 <a href="{{ route('comics.index') }}" class="btn btn-secondary mt-5">Back to Comics List</a>

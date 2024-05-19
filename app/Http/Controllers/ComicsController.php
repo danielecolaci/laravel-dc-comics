@@ -12,7 +12,7 @@ class ComicsController extends Controller
      */
     public function index()
     {
-         $comics = Comics::paginate(8);
+         $comics = Comics::paginate(9);
         return view('comics.index', compact('comics'));
     }
 
@@ -42,7 +42,7 @@ class ComicsController extends Controller
         $newComic->type = $data['type'];
         $newComic->save(); */
 
-        $comic = Comic::create($request->all());
+        $comic = Comics::create($request->all());
 
         return redirect()->route('comics.index');
     }
@@ -77,7 +77,7 @@ class ComicsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comics $comics)
+    public function destroy(Comics $comic)
     {
         $comic->delete();
 

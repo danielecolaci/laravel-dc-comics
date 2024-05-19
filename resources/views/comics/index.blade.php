@@ -16,8 +16,16 @@
                             <p class="card-text"><strong>Series:</strong> {{ $comic->series }}</p>
                             <p class="card-text"><strong>Sale Date:</strong> {{ $comic->sale_date }}</p>
                             <p class="card-text"><strong>Type:</strong> {{ $comic->type }}</p>
-                            <a href="{{ route('comics.show', $comic) }}" class="btn btn-primary">View</a>
-                            <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning">Edit</a>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ route('comics.show', $comic) }}" class="btn btn-primary px-3">View</a>
+                                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning px-3">Edit</a>
+                                <form action="{{ route('comics.destroy', $comic) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger px-3"
+                                        onclick="return confirm('Are you sure you want to delete this comic?')">Delete</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
