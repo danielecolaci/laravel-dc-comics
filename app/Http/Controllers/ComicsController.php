@@ -29,18 +29,15 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        $data = $request->all();
-
-       /*  $newComic = new Comics();
-        $newComic->title = $data['title'];
-        $newComic->description = $data['description'];
-        $newComic->thumb = $data['thumb'];
-        $newComic->price = $data['price'];
-        $newComic->series = $data['series'];
-        $newComic->sale_date = $data['sale_date'];
-        $newComic->type = $data['type'];
-        $newComic->save(); */
+        $request->validate([
+            'title' => 'required|min:3|max:50|',
+            'description' => 'required|min:3|max:4096',
+            'thumb' => 'required|min:3|max:255',
+            'price' => 'required|max:10',
+            'series' => 'required|min:3|max:50',
+            'sale_date' => 'required|date',
+            'type' => 'required|min:3|max:50',
+        ]);
 
         $comic = Comics::create($request->all());
 
@@ -68,7 +65,16 @@ class ComicsController extends Controller
      */
     public function update(Request $request, Comics $comic)
     {
-        //dd($request->all());
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'thumb' => 'required|string',
+            'price' => 'required|numeric',
+            'series' => 'required|string|max:255',
+            'sale_date' => 'required|date',
+            'type' => 'required|string|max:255',
+        ]);
+        
         $comic->update($request->all());
 
         return redirect()->route('comics.show', $comic);
